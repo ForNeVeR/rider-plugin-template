@@ -3,11 +3,11 @@ using JetBrains.ReSharper.Feature.Services.Daemon;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
 
-namespace ReSharperPlugin.RiderPluginTemplate
+namespace Rider.Plugins.Template
 {
     [ZoneDefinition]
     // [ZoneDefinitionConfigurableFeature("Title", "Description", IsInProductSection: false)]
-    public interface IRiderPluginTemplateZone : IZone
+    public interface IRiderPluginsTemplateZone : IZone
     {
     }
 }

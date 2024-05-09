@@ -1,40 +1,24 @@
 <Project>
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
 
-  <PropertyGroup>
-    <LangVersion>Latest</LangVersion>
-    <NoWarn>MSB3277</NoWarn>
-    <NoPackageAnalysis>true</NoPackageAnalysis>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+        <NoPackageAnalysis>true</NoPackageAnalysis>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
 
-    <BaseIntermediateOutputPath>obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
-    <DefaultItemExcludes>$(DefaultItemExcludes);obj\**</DefaultItemExcludes>
-    <OutputPath>bin\$(MSBuildProjectName)\$(Configuration)\</OutputPath>
-  </PropertyGroup>
+        <BaseIntermediateOutputPath>obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+        <DefaultItemExcludes>$(DefaultItemExcludes);obj\**</DefaultItemExcludes>
+        <OutputPath>bin\$(MSBuildProjectName)\$(Configuration)\</OutputPath>
+    </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
-    <DefineConstants>TRACE;DEBUG;JET_MODE_ASSERT</DefineConstants>
-  </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+        <DefineConstants>TRACE;DEBUG;JET_MODE_ASSERT</DefineConstants>
+    </PropertyGroup>
 
-  <Import Project="Plugin.props" />
+    <Import Project="$(MSBuildThisFileDirectory)..\..\build\DotNetSdkPath.Generated.props" />
 
-  <PropertyGroup>
-    <WaveVersion>$(SdkVersion.Substring(2,2))$(SdkVersion.Substring(5,1)).0.0</WaveVersion>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Reference Include="System.Xaml" />
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" PrivateAssets="All" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="*.DotSettings" />
-  </ItemGroup>
-
-  <ItemDefinitionGroup>
-    <EmbeddedResource>
-      <Generator>JetResourceGenerator</Generator>
-    </EmbeddedResource>
-  </ItemDefinitionGroup>
-
+    <PropertyGroup>
+        <JetBrainsRiderRdBackendCommonReference>$(DotNetSdkPath)\Build\PackageReference.JetBrains.Rider.RdBackend.Common.Props</JetBrainsRiderRdBackendCommonReference>
+    </PropertyGroup>
 </Project>

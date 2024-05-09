@@ -1,6 +1,10 @@
 /.idea/
 /.gradle/
-/build/
 
 bin/
+build/
 obj/
+
+/src/rider/generated/**/*.Generated.kt
+
+/src/dotnet/nuget.config

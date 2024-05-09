@@ -3,6 +3,8 @@
         <TargetFramework>net8.0</TargetFramework>
         <LangVersion>latest</LangVersion>
 
+        <NoWarn>NU1701</NoWarn>
+
         <NoPackageAnalysis>true</NoPackageAnalysis>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
         <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>

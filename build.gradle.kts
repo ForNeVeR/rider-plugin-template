@@ -1,3 +1,4 @@
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.changelog.exceptions.MissingVersionException
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.jetbrains.intellij.tasks.PrepareSandboxTask
@@ -139,6 +140,15 @@ tasks {
 
     runIde {
         jvmArgs("-Xmx1500m")
+    }
+
+    test {
+        useTestNG()
+        testLogging {
+            showStandardStreams = true
+            exceptionFormat = TestExceptionFormat.FULL
+        }
+        environment["LOCAL_ENV_RUN"] = "true"
     }
 }
 

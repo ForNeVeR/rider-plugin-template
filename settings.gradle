@@ -17,6 +17,6 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'ReSharperPlugin.RiderPluginTemplate'
+rootProject.name = 'RiderPluginTemplate'
 
 include ':protocol'

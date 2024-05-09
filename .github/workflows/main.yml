@@ -22,6 +22,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Common preparation
+      - name: Prepare build
+        run: ./gradlew :prepare
+
       # Backend
       - name: Set up .NET SDK
         uses: actions/setup-dotnet@v4

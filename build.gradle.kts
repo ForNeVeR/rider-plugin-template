@@ -1,7 +1,19 @@
+import com.jetbrains.plugin.structure.base.utils.isFile
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.changelog.exceptions.MissingVersionException
+import org.jetbrains.intellij.platform.gradle.Constants
+import org.jetbrains.intellij.platform.gradle.tasks.PrepareSandboxTask
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.jetbrains.intellij.tasks.PrepareSandboxTask
+import kotlin.io.path.absolute
+import kotlin.io.path.isDirectory
+
+plugins {
+    alias(libs.plugins.changelog)
+    alias(libs.plugins.gradleIntelliJPlatform)
+    alias(libs.plugins.gradleJvmWrapper)
+    alias(libs.plugins.kotlinJvm)
+    id("java")
+}
 
 allprojects {
     repositories {
@@ -9,12 +21,10 @@ allprojects {
     }
 }
 
-plugins {
-    alias(libs.plugins.changelog)
-    alias(libs.plugins.gradleIntelliJ)
-    alias(libs.plugins.gradleJvmWrapper)
-    alias(libs.plugins.kotlinJvm)
-    id("java")
+repositories {
+    intellijPlatform {
+        defaultRepositories()
+    }
 }
 
 val pluginVersion: String by project
@@ -28,11 +38,20 @@ val dotNetSrcDir = File(projectDir, "src/dotnet")
 version = pluginVersion
 
 val riderSdkPath by lazy {
-    val path = tasks.setupDependencies.get().idea.get().classes.resolve("lib/DotNetSdkForRdPlugins")
-    if (!path.isDirectory) error("$path does not exist or not a directory")
+    val path = intellijPlatform.platformPath.resolve("lib/DotNetSdkForRdPlugins").absolute()
+    if (!path.isDirectory()) error("$path does not exist or not a directory")
 
     println("Rider SDK path: $path")
     return@lazy path
+}
+
+dependencies {
+    intellijPlatform {
+        rider(riderSdkVersion)
+        instrumentationTools()
+        bundledLibrary("lib/testFramework.jar")
+    }
+    testImplementation(libs.openTest4J)
 }
 
 sourceSets {
@@ -44,7 +63,6 @@ sourceSets {
 }
 
 tasks {
-
     val generateDotNetSdkProperties by registering {
         val dotNetSdkGeneratedPropsFile = File(projectDir, "build/DotNetSdkPath.Generated.props")
         doLast {
@@ -152,12 +170,6 @@ tasks {
     }
 }
 
-intellij {
-    type.set("RD")
-    version.set(riderSdkVersion)
-    downloadSources.set(false)
-}
-
 val riderModel by configurations.creating {
     isCanBeConsumed = true
     isCanBeResolved = false
@@ -165,14 +177,13 @@ val riderModel by configurations.creating {
 
 artifacts {
     add(riderModel.name, provider {
-        val sdkRoot = tasks.setupDependencies.get().idea.get().classes
-        sdkRoot.resolve("lib/rd/rider-model.jar").also {
+        intellijPlatform.platformPath.resolve("lib/rd/rider-model.jar").also {
             check(it.isFile) {
                 "rider-model.jar is not found at $riderModel"
             }
         }
     }) {
-        builtBy(tasks.setupDependencies)
+        builtBy(Constants.Tasks.INITIALIZE_INTELLIJ_PLATFORM_PLUGIN)
     }
 }
 

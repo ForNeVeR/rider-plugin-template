@@ -9,7 +9,6 @@ pluginManagement {
     resolutionStrategy {
         eachPlugin {
             if (requested.id.id == "com.jetbrains.rdgen") {
-                println(requested.version)
                 useModule("com.jetbrains.rd:rd-gen:${requested.version}")
             }
         }

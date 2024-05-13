@@ -45,6 +45,14 @@ val riderSdkPath by lazy {
     return@lazy path
 }
 
+kotlin {
+    jvmToolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+        @Suppress("UnstableApiUsage")
+        vendor = JvmVendorSpec.JETBRAINS
+    }
+}
+
 dependencies {
     intellijPlatform {
         rider(riderSdkVersion)
@@ -109,9 +117,6 @@ tasks {
 
     withType<KotlinCompile> {
         dependsOn(rdGen)
-        kotlinOptions {
-            jvmTarget = "17"
-        }
     }
 
     buildPlugin {

@@ -24,6 +24,7 @@ allprojects {
 repositories {
     intellijPlatform {
         defaultRepositories()
+        jetbrainsRuntime()
     }
 }
 
@@ -45,21 +46,20 @@ val riderSdkPath by lazy {
     return@lazy path
 }
 
-kotlin {
-    jvmToolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-        @Suppress("UnstableApiUsage")
-        vendor = JvmVendorSpec.JETBRAINS
-    }
-}
-
 dependencies {
     intellijPlatform {
         rider(riderSdkVersion)
+        jetbrainsRuntime()
         instrumentationTools()
         bundledLibrary("lib/testFramework.jar")
     }
     testImplementation(libs.openTest4J)
+}
+
+kotlin {
+    jvmToolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }
 
 sourceSets {

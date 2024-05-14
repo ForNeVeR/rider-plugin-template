@@ -4,6 +4,7 @@ include(":protocol")
 pluginManagement {
     repositories {
         gradlePluginPortal()
+        maven("https://oss.sonatype.org/content/repositories/snapshots/")
         mavenCentral()
     }
     resolutionStrategy {
@@ -13,8 +14,4 @@ pluginManagement {
             }
         }
     }
-}
-
-plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
 }

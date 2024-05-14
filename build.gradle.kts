@@ -175,7 +175,7 @@ tasks {
     }
 }
 
-val riderModel by configurations.creating {
+val riderModel: Configuration by configurations.creating {
     isCanBeConsumed = true
     isCanBeResolved = false
 }

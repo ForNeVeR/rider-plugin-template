@@ -2,6 +2,7 @@ import com.jetbrains.plugin.structure.base.utils.isFile
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.changelog.exceptions.MissingVersionException
 import org.jetbrains.intellij.platform.gradle.Constants
+import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 import org.jetbrains.intellij.platform.gradle.tasks.PrepareSandboxTask
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import kotlin.io.path.absolute
@@ -51,7 +52,7 @@ dependencies {
         rider(riderSdkVersion)
         jetbrainsRuntime()
         instrumentationTools()
-        bundledLibrary("lib/testFramework.jar")
+        testFramework(TestFrameworkType.Platform.Bundled)
     }
     testImplementation(libs.openTest4J)
 }

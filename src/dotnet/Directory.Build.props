@@ -18,7 +18,11 @@
         <DefineConstants>TRACE;DEBUG;JET_MODE_ASSERT</DefineConstants>
     </PropertyGroup>
 
-    <Import Project="$(MSBuildThisFileDirectory)..\..\build\DotNetSdkPath.Generated.props" />
+    <Target BeforeTargets="CoreCompile" Name="CheckForGradlePrepared" Condition="!Exists('$(JetBrainsRiderRdBackendCommonReference)')">
+        <Error Text="Please run `./gradlew :prepare`" />
+    </Target>
+
+    <Import Project="$(MSBuildThisFileDirectory)..\..\build\DotNetSdkPath.Generated.props" Condition="Exists('$(MSBuildThisFileDirectory)..\..\build\DotNetSdkPath.Generated.props')" />
 
     <PropertyGroup>
         <JetBrainsRiderRdBackendCommonReference>$(DotNetSdkPath)\Build\PackageReference.JetBrains.Rider.RdBackend.Common.Props</JetBrainsRiderRdBackendCommonReference>

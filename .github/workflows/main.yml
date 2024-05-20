@@ -48,30 +48,28 @@ jobs:
         run: dotnet build -c Release
 
       # Frontend
-      - name: Build
+      - name: Assemble
         working-directory: content
-        run: ./gradlew -PbuildConfiguration=Release :buildPlugin
-      # TODO[#12]: Enable tests back
-      #- name: Test
-      #  run: ./gradlew -PbuildConfiguration=Release check
-      #- name: Upload Test Results
-      #  uses: actions/upload-artifact@v4
-      #  with:
-      #    name: ${{ runner.os }}.test-results
-      #    path: build/reports/tests
-      #  if: ${{ always() }}
-      #- name: Upload Test Logs
-      #  uses: actions/upload-artifact@v4
-      #  with:
-      #    name: ${{ runner.os }}.test-logs
-      #    path: build/idea-sandbox/system-test/log
-      #  if: ${{ always() }}
+        run: ./gradlew -PbuildConfiguration=Release :assemble
+      - name: Check
+        run: ./gradlew -PbuildConfiguration=Release :check
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ runner.os }}.test-results
+          path: build/reports/tests
+        if: ${{ always() }}
+      - name: Upload Test Logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ runner.os }}.test-logs
+          path: build/idea-sandbox/system-test/log
+        if: ${{ always() }}
 
       # Distribution
-      # TODO[#12]: Enable back
-      #- name: Build Distribution
-      #  if: matrix.image == 'ubuntu-latest'
-      #  run: ./gradlew -PbuildConfiguration=Release buildPlugin
+      - name: Build Distribution
+        if: matrix.image == 'ubuntu-latest'
+        run: ./gradlew -PbuildConfiguration=Release :buildPlugin
       - name: Determine Version
         if: matrix.image == 'ubuntu-latest'
         shell: pwsh

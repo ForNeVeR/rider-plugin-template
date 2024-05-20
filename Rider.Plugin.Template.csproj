@@ -27,6 +27,6 @@
   <ItemGroup Label="Files">
     <Content Include="content\**\*" Exclude="content\**\bin\**;content\**\obj\**" />
     <Compile Remove="**\*" />
-    <None Include="README.md" Pack="true" PackagePath="\" />
+    <None Include="content\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>

@@ -7,21 +7,20 @@ This is a template of plugin for JetBrains Rider, including:
 - a unit test,
 - GitHub Actions connecting it all.
 
-Usage
------
+
+Installing template from source code
+------------------------------------
+To use the template from the source code:
+
 1. Fork or clone the repository.
-2. Replace `com.jetbrains.rider.plugins.plugintemplate` and `Rider.Plugins.PluginTemplate` with your preferred identifiers for the frontend and for the backend part.
-3. Build your plugin (the built ZIP file goes into `build/distributions`):
+2. Create a local NuGet package:
    ```console
-   $ ./gradlew :buildPlugin
+   dotnet pack -o ./output
    ```
-4. Run the tests:
+   Your NuGet package will be generated in the `./output/` folder.
+3. Install the template:
    ```console
-   $ ./gradlew :check
-   ```
-5. Run a test instance of Rider with your plugin:
-   ```console
-   $ ./gradlew :runIde
+   dotnet new install ./output/JetBrains.Rider.Plugin.*.nupkg
    ```
 
 License

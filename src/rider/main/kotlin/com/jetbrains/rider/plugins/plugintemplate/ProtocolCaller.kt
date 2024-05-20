@@ -1,9 +1,9 @@
-package com.jetbrains.rider.plugins.template
+package com.jetbrains.rider.plugins.plugintemplate
 
 import com.intellij.openapi.components.Service
 import com.intellij.openapi.project.Project
-import com.jetbrains.rider.plugins.template.model.RdCallRequest
-import com.jetbrains.rider.plugins.template.model.templatePluginModel
+import com.jetbrains.rider.plugins.plugintemplate.model.RdCallRequest
+import com.jetbrains.rider.plugins.plugintemplate.model.templatePluginModel
 import com.jetbrains.rider.projectView.solution
 
 @Service(Service.Level.PROJECT)

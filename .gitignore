@@ -7,6 +7,6 @@ build/
 obj/
 
 /src/rider/generated/**/*.Generated.kt
-/src/dotnet/Rider.Plugins.Template/Model/**/*.Generated.cs
+/src/dotnet/Rider.Plugins.PluginTemplate/Model/**/*.Generated.cs
 
 /src/dotnet/nuget.config

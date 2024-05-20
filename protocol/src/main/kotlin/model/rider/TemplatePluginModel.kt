@@ -18,8 +18,8 @@ object TemplatePluginModel : Ext(SolutionModel.Solution) {
     }
 
     init {
-        setting(Kotlin11Generator.Namespace, "com.jetbrains.rider.plugins.template.model")
-        setting(CSharp50Generator.Namespace, "Rider.Plugins.Template.Model")
+        setting(Kotlin11Generator.Namespace, "com.jetbrains.rider.plugins.plugintemplate.model")
+        setting(CSharp50Generator.Namespace, "Rider.Plugins.PluginTemplate.Model")
 
         call("myCall", RdCallRequest, RdCallResponse)
             .doc("This is an example protocol call.")

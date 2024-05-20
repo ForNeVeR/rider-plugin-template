@@ -1,0 +1,39 @@
+{
+    "$schema": "https://json.schemastore.org/template",
+    "author": "JetBrains",
+    "classifications": [ "jetbrains", "rider" ],
+    "name": "JetBrains Rider Plugin",
+    "identity": "JetBrains.Rider.Plugin",
+    "description": "Solution template for creating a plugin for JetBrains Rider",
+    "shortName": "jetbrains-rider-plugin",
+    "tags": {
+        "type": "solution",
+        "language": "C#"
+    },
+    "sourceName": "PluginTemplate",
+    "defaultName": "RiderPlugin",
+    "preferNameDirectory" : true,
+    "symbols": {
+        "riderPluginId": {
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+                "source":"name",
+                "toLower": true
+            },
+            "fileRename": "plugintemplate"
+        }
+    },
+    "postActions": [
+        {
+            "description": "Run `./gradlew :prepare`",
+            "manualInstructions": [
+                {
+                    "text": "For finish template configuration, please run `./gradlew :prepare` from solution directory"
+                }
+            ],
+            "actionId": "AC1156F7-BB77-4DB8-B28F-24EEBCCA1E5C",
+            "continueOnError": true
+        }
+    ]
+}

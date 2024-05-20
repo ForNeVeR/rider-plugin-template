@@ -3,9 +3,9 @@ using JetBrains.Lifetimes;
 using JetBrains.ProjectModel;
 using JetBrains.Rd.Tasks;
 using JetBrains.ReSharper.Feature.Services.Protocol;
-using Rider.Plugins.Template.Model;
+using Rider.Plugins.PluginTemplate.Model;
 
-namespace Rider.Plugins.Template;
+namespace Rider.Plugins.PluginTemplate;
 
 [SolutionComponent]
 public class MyRdHost

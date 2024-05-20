@@ -10,7 +10,7 @@ This is a template of plugin for JetBrains Rider, including:
 Usage
 -----
 1. Fork or clone the repository.
-2. Replace `com.jetbrains.rider.plugins.template` and `Rider.Plugins.Template` with your preferred identifiers for the frontend and for the backend part.
+2. Replace `com.jetbrains.rider.plugins.plugintemplate` and `Rider.Plugins.PluginTemplate` with your preferred identifiers for the frontend and for the backend part.
 3. Build your plugin (the built ZIP file goes into `build/distributions`):
    ```console
    $ ./gradlew :buildPlugin

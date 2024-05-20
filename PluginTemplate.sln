@@ -5,7 +5,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		src\dotnet\Directory.Build.props = src\dotnet\Directory.Build.props
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rider.Plugins.Template", "src\dotnet\Rider.Plugins.Template\Rider.Plugins.Template.csproj", "{3BE21350-43F9-4CBD-9BF2-AE25E9475095}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rider.Plugins.PluginTemplate", "src\dotnet\Rider.Plugins.PluginTemplate\Rider.Plugins.PluginTemplate.csproj", "{3BE21350-43F9-4CBD-9BF2-AE25E9475095}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

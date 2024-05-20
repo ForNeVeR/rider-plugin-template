@@ -1,9 +1,9 @@
-package com.jetbrains.rider.plugins.template.test.cases
+package com.jetbrains.rider.plugins.plugintemplate.test.cases
 
 import com.intellij.openapi.components.service
 import com.intellij.openapi.project.Project
 import com.jetbrains.rd.platform.diagnostics.RdLogTraceScenarios
-import com.jetbrains.rider.plugins.template.ProtocolCaller
+import com.jetbrains.rider.plugins.plugintemplate.ProtocolCaller
 import com.jetbrains.rider.protocol.protocol
 import com.jetbrains.rider.test.OpenSolutionParams
 import com.jetbrains.rider.test.annotations.TestEnvironment

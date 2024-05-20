@@ -1,12 +1,15 @@
-/.gradle/
-/.idea/
-/.intellijPlatform/
+content/.gradle/
+content/.idea/
+content/.intellijPlatform/
 
 bin/
-build/
 obj/
+output/
+content/bin/
+content/build/
+content/obj/
 
-/src/rider/generated/**/*.Generated.kt
-/src/dotnet/Rider.Plugins.PluginTemplate/Model/**/*.Generated.cs
+content/src/rider/generated/**/*.Generated.kt
+content/src/dotnet/Rider.Plugins.PluginTemplate/Model/**/*.Generated.cs
 
-/src/dotnet/nuget.config
+content/src/dotnet/nuget.config

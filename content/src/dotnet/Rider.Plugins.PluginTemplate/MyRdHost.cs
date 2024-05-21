@@ -12,7 +12,7 @@ public class MyRdHost
 {
     public MyRdHost(ISolution solution)
     {
-        var model = solution.GetProtocolSolution().GetTemplatePluginModel();
+        var model = solution.GetProtocolSolution().GetRdPluginTemplateModel();
         model.MyCall.SetAsync(HandleCall);
     }
 

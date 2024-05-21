@@ -8,7 +8,7 @@ import com.jetbrains.rd.generator.nova.kotlin.Kotlin11Generator
 import com.jetbrains.rider.model.nova.ide.SolutionModel
 
 @Suppress("unused")
-object PluginTemplateModel : Ext(SolutionModel.Solution) {
+object RdPluginTemplateModel : Ext(SolutionModel.Solution) {
     private val RdCallRequest = structdef {
         field("myField", string)
     }

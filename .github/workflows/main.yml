@@ -22,16 +22,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set up .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Pack template
+        shell: pwsh
+        run: dotnet pack -o output
+      - name: Upload template
+        uses: actions/upload-artifact@v4
+        with:
+          name: template
+          path: output/*.nupkg
+
       # Common preparation
       - name: Prepare build
         working-directory: content
         run: ./gradlew :prepare
 
       # Backend
-      - name: Set up .NET SDK
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '8.0.x'
       - name: Build Backend
         working-directory: content
         run: dotnet build -c Release

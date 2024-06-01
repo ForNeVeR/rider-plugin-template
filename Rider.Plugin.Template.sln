@@ -9,9 +9,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		LICENSE = LICENSE
 		.editorconfig = .editorconfig
 		CONTRIBUTING.md = CONTRIBUTING.md
+		.gitignore = .gitignore
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rider.Plugin.Template", "Rider.Plugin.Template.csproj", "{E7B9629F-C435-4A51-9938-CE38601C599C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{564D0E72-3908-4D5C-8603-A20AE41A3A99}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{7D0F1C6A-E1F1-466B-990C-0E07B462C8DA}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\main.yml = .github\workflows\main.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,5 +34,8 @@ Global
 		{E7B9629F-C435-4A51-9938-CE38601C599C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7B9629F-C435-4A51-9938-CE38601C599C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7B9629F-C435-4A51-9938-CE38601C599C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7D0F1C6A-E1F1-466B-990C-0E07B462C8DA} = {564D0E72-3908-4D5C-8603-A20AE41A3A99}
 	EndGlobalSection
 EndGlobal

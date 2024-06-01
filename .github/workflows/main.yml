@@ -52,23 +52,25 @@ jobs:
         working-directory: content
         run: ./gradlew -PbuildConfiguration=Release :assemble
       - name: Check
+        working-directory: content
         run: ./gradlew -PbuildConfiguration=Release :check
       - name: Upload Test Results
         uses: actions/upload-artifact@v4
         with:
           name: ${{ runner.os }}.test-results
-          path: build/reports/tests
+          path: content/build/reports/tests
         if: ${{ always() }}
       - name: Upload Test Logs
         uses: actions/upload-artifact@v4
         with:
           name: ${{ runner.os }}.test-logs
-          path: build/idea-sandbox/*/log
+          path: content/build/idea-sandbox/*/log
         if: ${{ always() }}
 
       # Distribution
       - name: Build Distribution
         if: matrix.image == 'ubuntu-latest'
+        working-directory: content
         run: ./gradlew -PbuildConfiguration=Release :buildPlugin
       - name: Determine Version
         if: matrix.image == 'ubuntu-latest'

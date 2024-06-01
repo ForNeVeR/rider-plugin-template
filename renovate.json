@@ -6,7 +6,8 @@
     "packageRules": [
         {
             "matchPackagePatterns": [
-                "org.jetbrains.kotlin.jvm"
+                "org.jetbrains.kotlin.jvm",
+                "org.jetbrains.kotlin:kotlin-stdlib"
             ],
             "enabled": false
         }

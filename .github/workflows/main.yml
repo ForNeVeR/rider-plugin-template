@@ -32,6 +32,7 @@ jobs:
         run: dotnet pack -o output
       - name: Upload template
         uses: actions/upload-artifact@v4
+        if: matrix.image == 'ubuntu-latest'
         with:
           name: template
           path: output/*.nupkg

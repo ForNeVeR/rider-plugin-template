@@ -24,6 +24,7 @@ jobs:
 
       # Common preparation
       - name: Prepare build
+        working-directory: content
         run: ./gradlew :prepare
 
       # Backend
@@ -32,10 +33,12 @@ jobs:
         with:
           dotnet-version: '8.0.x'
       - name: Build Backend
+        working-directory: content
         run: dotnet build -c Release
 
       # Frontend
       - name: Build
+        working-directory: content
         run: ./gradlew -PbuildConfiguration=Release :buildPlugin
       # TODO[#12]: Enable tests back
       #- name: Test
@@ -62,18 +65,18 @@ jobs:
         if: matrix.image == 'ubuntu-latest'
         shell: pwsh
         run: |
-          $version = ./scripts/Get-Version.ps1
+          $version = content/scripts/Get-Version.ps1
           "PLUGIN_VERSION=$version" | Out-File $env:GITHUB_ENV
       - name: Unpack Distribution # for the purpose of uploading
         if: matrix.image == 'ubuntu-latest'
         shell: pwsh
-        run: scripts/Unpack-Distribution.ps1
+        run: content/scripts/Unpack-Distribution.ps1
       - name: Upload Distribution
         if: matrix.image == 'ubuntu-latest'
         uses: actions/upload-artifact@v4
         with:
           name: plugin-${{ env.PLUGIN_VERSION }}
-          path: build/distributions/unpacked
+          path: content/build/distributions/unpacked
   validation:
     runs-on: ubuntu-latest
     name: "Validate Gradle wrapper"

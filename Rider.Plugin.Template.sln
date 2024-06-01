@@ -10,6 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		CONTRIBUTING.md = CONTRIBUTING.md
 		.gitignore = .gitignore
+		renovate.json = renovate.json
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rider.Plugin.Template", "Rider.Plugin.Template.csproj", "{E7B9629F-C435-4A51-9938-CE38601C599C}"

@@ -64,7 +64,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ runner.os }}.test-logs
-          path: content/build/idea-sandbox/*/log
+          path: content/build/idea-sandbox/*/log-test
         if: ${{ always() }}
 
       # Distribution

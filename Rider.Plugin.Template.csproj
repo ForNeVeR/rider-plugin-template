@@ -25,7 +25,14 @@
   </PropertyGroup>
 
   <ItemGroup Label="Files">
-    <Content Include="content\**\*" Exclude="content\**\bin\**;content\**\obj\**" />
+    <Content Include="content\**\*" Exclude="
+        content\**\*.Generated.*;
+        content\**\bin\**;
+        content\**\obj\**;
+        content\.gradle\**;
+        content\.intellijPlatform\**;
+        content\build\**;
+    " />
     <Compile Remove="**\*" />
     <None Include="content\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>

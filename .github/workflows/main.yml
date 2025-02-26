@@ -37,23 +37,28 @@ jobs:
           name: template
           path: output/*.nupkg
 
+      # Validate wrapper
+      - name: Gradle Wrapper Validation
+        uses: gradle/actions/wrapper-validation@v4
+
+      # Setup Gradle
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
       # Common preparation
       - name: Prepare build
         working-directory: content
-        run: ./gradlew :prepare
+        run: ./gradlew -PbuildConfiguration=Release prepare
 
       # Backend
       - name: Build Backend
         working-directory: content
         run: dotnet build -c Release
 
-      # Frontend
-      - name: Assemble
+      # Plugin
+      - name: Build
         working-directory: content
-        run: ./gradlew -PbuildConfiguration=Release :assemble
-      - name: Check
-        working-directory: content
-        run: ./gradlew -PbuildConfiguration=Release :check
+        run: ./gradlew -PbuildConfiguration=Release build
       - name: Upload Test Results
         uses: actions/upload-artifact@v4
         with:
@@ -88,9 +93,3 @@ jobs:
         with:
           name: plugin-${{ env.PLUGIN_VERSION }}
           path: content/build/distributions/unpacked
-  validation:
-    runs-on: ubuntu-latest
-    name: "Validate Gradle wrapper"
-    steps:
-      - uses: actions/checkout@v4
-      - uses: gradle/actions/wrapper-validation@v4

@@ -31,5 +31,5 @@ To update the key:
    (If this is the first publication of a new package, upload a temporary short-living key with permission to add new packages, and rotate it afterward.)
 4. Paste the generated key to the `NUGET_TOKEN` variable on the [action secrets][github.secrets] section of GitHub settings.
 
-[github.secrets]: https://github.com/ForNeVeR/TruePath/settings/secrets/actions
+[github.secrets]: https://github.com/ForNeVeR/rider-plugin-template/settings/secrets/actions
 [nuget.api-keys]: https://www.nuget.org/account/apikeys

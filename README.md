@@ -47,6 +47,7 @@ Documentation
 -------------
 - [Changelog][docs.changelog]
 - [Template Contributor Guide][docs.contributing]
+- [Template Maintainer Guide][docs.maintaining]
 
 License
 -------
@@ -58,6 +59,7 @@ Copyright 2024-2025 rider-plugin-template contributors.
 [docs.changelog]: CHANGELOG.md
 [docs.contributing]: CONTRIBUTING.md
 [docs.license]: LICENSE
+[docs.maintaining]: MAINTAINING.md
 [jetbrains.opensource]: https://github.com/JetBrains/
 [nuget.badge]: https://img.shields.io/nuget/v/FVNever.Rider.Plugin.Template
 [nuget.page]: https://www.nuget.org/packages/FVNever.Rider.Plugin.Template

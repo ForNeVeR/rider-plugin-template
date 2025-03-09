@@ -10,6 +10,13 @@
                 "org.jetbrains.kotlin:kotlin-stdlib"
             ],
             "enabled": false
+        },
+        {
+            "matchPackagePatterns": [
+                "com.jetbrains.rd:rd-gen"
+            ],
+            "enabled": false,
+            "description": ["rd-gen is managed by intellij-updater."]
         }
     ]
 }

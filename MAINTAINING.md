@@ -1,7 +1,7 @@
 <!--
 SPDX-FileCopyrightText: 2024-2025 Friedrich von Never <friedrich@fornever.me>
 
-SPDX-License-Identifier: MIT
+SPDX-License-Identifier: Apache-2.0
 -->
 
 Maintainer Guide

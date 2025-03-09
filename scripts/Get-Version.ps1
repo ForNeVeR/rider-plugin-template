@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2024 Friedrich von Never <friedrich@fornever.me>
+# SPDX-FileCopyrightText: 2024-2025 Friedrich von Never <friedrich@fornever.me>
 #
-# SPDX-License-Identifier: MIT
+# SPDX-License-Identifier: Apache-2.0
 
 param(
     [string] $RefName,
@@ -15,15 +15,15 @@ if ($RefName -match '^refs/tags/v') {
     $version = $RefName -replace '^refs/tags/v', ''
     Write-Host "Pushed ref is a version tag, version: $version"
 } else {
-    $propsFilePath = "$RepositoryRoot/Directory.Build.props"
-    [xml] $props = Get-Content $propsFilePath
+    $projFilePath = "$RepositoryRoot/Rider.Plugin.Template.csproj"
+    [xml] $props = Get-Content $projFilePath
     foreach ($group in $props.Project.PropertyGroup) {
-        if ($group.Label -eq 'Packaging') {
+        if ($group.Label -eq 'Package') {
             $version = $group.Version
             break
         }
     }
-    Write-Host "Pushed ref is a not version tag, got version from $($propsFilePath): $version"
+    Write-Host "Pushed ref is a not version tag, got version from $($projFilePath): $version"
 }
 
 Write-Output $version

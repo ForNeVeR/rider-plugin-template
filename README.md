@@ -35,8 +35,13 @@ $ ./gradlew :prepare
 ```
 After that, the plugin is read for work. See the `README.md` file among the generated sources to learn how to build, test, and run the plugin.
 
+Versioning
+----------
+The template follows the Rider internal version schema: e.g. a version of the template corresponding to Rider 2024.2 would have a version `242.x.y`, where `x.y` partially follows [Semantic Versioning 2.0.0][semver]: `y` is incremented for bugfix releases, `x` is incremented for everything else.
+
 Documentation
 -------------
+- [Changelog][docs.changelog]
 - [Template Contributor Guide][docs.contributing]
 
 License
@@ -46,6 +51,8 @@ Apache 2 License, see [the `LICENSE` file][docs.license].
 Copyright 2024 JetBrains s.r.o.
 
 [badge.jetbrains-team]: https://jb.gg/badges/team.svg
+[docs.changelog]: CHANGELOG.md
 [docs.contributing]: CONTRIBUTING.md
 [docs.license]: LICENSE
 [jetbrains.opensource]: https://github.com/JetBrains/
+[semver]: https://semver.org/spec/v2.0.0.html

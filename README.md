@@ -45,7 +45,7 @@ Apache 2 License, see [the `LICENSE` file][docs.license].
 
 Copyright 2024 JetBrains s.r.o.
 
-[badge.jetbrains-team]: https://camo.githubusercontent.com/c5185dff658ed64c46753080436014df7632c4374829409c638fdb4ae0dcdcc0/68747470733a2f2f6a622e67672f6261646765732f7465616d2d706c61737469632e737667
+[badge.jetbrains-team]: https://jb.gg/badges/team.svg
 [docs.contributing]: CONTRIBUTING.md
 [docs.license]: LICENSE
 [jetbrains.opensource]: https://github.com/JetBrains/

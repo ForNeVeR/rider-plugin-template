@@ -36,15 +36,15 @@ jobs:
       with:
         path: |-
           ./release-notes.md
-          ./bin/Release/FVNever.JetBrains.Rider.Plugin.Template.${{ steps.version.outputs.version }}.nupkg
+          ./bin/Release/FVNever.Rider.Plugin.Template.${{ steps.version.outputs.version }}.nupkg
     - if: startsWith(github.ref, 'refs/tags/v')
       name: Create a release
       uses: softprops/action-gh-release@v2
       with:
         body_path: ./release-notes.md
         files: |-
-          ./bin/Release/FVNever.JetBrains.Rider.Plugin.Template.${{ steps.version.outputs.version }}.nupkg
+          ./bin/Release/FVNever.Rider.Plugin.Template.${{ steps.version.outputs.version }}.nupkg
         name: Rider Plugin Template v${{ steps.version.outputs.version }}
     - if: startsWith(github.ref, 'refs/tags/v')
       name: Push artifact to NuGet
-      run: dotnet nuget push ./bin/Release/FVNever.JetBrains.Rider.Plugin.Template.${{ steps.version.outputs.version }}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_TOKEN }}
+      run: dotnet nuget push ./bin/Release/FVNever.Rider.Plugin.Template.${{ steps.version.outputs.version }}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_TOKEN }}

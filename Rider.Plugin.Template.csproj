@@ -12,10 +12,10 @@
 
     <PropertyGroup Label="Package">
         <Version>242.0.0</Version>
-        <PackageId>FVNever.JetBrains.Rider.Plugin</PackageId>
+        <PackageId>FVNever.Rider.Plugin.Template</PackageId>
         <Title>JetBrains Rider Plugin Template</Title>
-        <Authors>JetBrains</Authors>
-        <Description>Template for creating plugin for JetBrains Rider.</Description>
+        <Authors>rider-plugin-template contributors</Authors>
+        <Description>Template for creating a plugin for JetBrains Rider.</Description>
         <PackageTags>dotnet-new;templates</PackageTags>
         <PackageProjectUrl>https://github.com/ForNeVeR/rider-plugin-template</PackageProjectUrl>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>

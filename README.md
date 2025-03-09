@@ -37,7 +37,7 @@ Execute the following shell command in the plugin directory. It will prepare it 
 ```console
 $ ./gradlew prepare
 ```
-After that, the plugin is read for work. See the `README.md` file among the generated sources to learn how to build, test, and run the plugin.
+After that, the plugin is ready for work. See the `README.md` file among the generated sources to learn how to build, test, and run the plugin.
 
 Versioning
 ----------

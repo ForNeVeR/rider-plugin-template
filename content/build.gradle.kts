@@ -30,7 +30,6 @@ repositories {
 }
 
 val pluginVersion: String by project
-val riderSdkVersion: String by project
 val untilBuildVersion: String by project
 val buildConfiguration: String by project
 val dotNetPluginId: String by project
@@ -49,7 +48,7 @@ val riderSdkPath by lazy {
 
 dependencies {
     intellijPlatform {
-        rider(riderSdkVersion, useInstaller = false)
+        rider(libs.versions.riderSdk, useInstaller = false)
         jetbrainsRuntime()
         testFramework(TestFrameworkType.Bundled)
     }

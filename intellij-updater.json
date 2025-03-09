@@ -5,8 +5,8 @@
         "kind": "rd-gen",
         "versionFlavor": "release"
     }, {
-        "file": "content/gradle.properties",
-        "field": "riderSdkVersion",
+        "file": "content/gradle/libs.versions.toml",
+        "field": "riderSdk",
         "kind": "rider",
         "versionFlavor": "release",
         "versionConstraint": "latestWave",

@@ -49,10 +49,9 @@ val riderSdkPath by lazy {
 
 dependencies {
     intellijPlatform {
-        rider(riderSdkVersion)
+        rider(riderSdkVersion, useInstaller = false)
         jetbrainsRuntime()
-        instrumentationTools()
-        testFramework(TestFrameworkType.Platform.Bundled)
+        testFramework(TestFrameworkType.Bundled)
     }
     testImplementation(libs.openTest4J)
 }
@@ -160,6 +159,10 @@ tasks {
                 if (!file.exists()) throw RuntimeException("File \"$file\" does not exist.")
             }
         }
+    }
+
+    prepareTestSandbox {
+        disabledPlugins.add("com.intellij.kubernetes") // TODO: Get rid of this after migration to 2025.1
     }
 
     runIde {

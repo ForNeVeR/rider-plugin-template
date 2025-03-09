@@ -160,7 +160,7 @@ tasks {
     }
 
     prepareTestSandbox {
-        disabledPlugins.add("com.intellij.kubernetes") // TODO: Get rid of this after migration to 2025.1
+        disabledPlugins.add("com.intellij.kubernetes") // TODO[#51]: Get rid of this after migration to 2025.1
     }
 
     runIde {

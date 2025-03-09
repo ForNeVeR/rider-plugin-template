@@ -105,14 +105,12 @@ tasks {
         dependsOn(rdGen, generateDotNetSdkProperties, generateNuGetConfig)
     }
 
-    val compileDotNet by registering {
+    val compileDotNet by registering(Exec::class) {
         dependsOn(rdGen, generateDotNetSdkProperties, generateNuGetConfig)
-        doLast {
-            exec {
-                executable("dotnet")
-                args("build", "-c", buildConfiguration)
-            }
-        }
+        inputs.property("buildConfiguration", buildConfiguration)
+
+        executable("dotnet")
+        args("build", "-consoleLoggerParameters:ErrorsOnly", "--configuration", buildConfiguration)
     }
 
     withType<KotlinCompile> {

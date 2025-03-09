@@ -43,6 +43,8 @@ Versioning
 ----------
 The template follows the Rider internal version schema: e.g. a version of the template corresponding to Rider 2024.2 would have a version `242.x.y`, where `x.y` partially follows [Semantic Versioning 2.0.0][semver]: `y` is incremented for bugfix releases, `x` is incremented for everything else.
 
+Preview versions of Rider (if any) are targeted by the preview versions of the template.
+
 Documentation
 -------------
 - [Changelog][docs.changelog]

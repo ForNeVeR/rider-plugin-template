@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using JetBrains.Application.Parts;
 using JetBrains.Lifetimes;
 using JetBrains.ProjectModel;
 using JetBrains.Rd.Tasks;
@@ -7,7 +8,7 @@ using Rider.Plugins.PluginTemplate.Model;
 
 namespace Rider.Plugins.PluginTemplate;
 
-[SolutionComponent]
+[SolutionComponent(Instantiation.ContainerAsyncAnyThreadUnsafe)]
 public class MyRdHost
 {
     public MyRdHost(ISolution solution)

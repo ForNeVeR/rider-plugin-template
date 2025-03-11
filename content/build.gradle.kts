@@ -159,7 +159,7 @@ tasks {
     }
 
     prepareTestSandbox {
-        disabledPlugins.add("com.intellij.kubernetes") // TODO[#51]: Get rid of this after migration to 2025.1
+        disabledPlugins.add("intellij.platform.ijent.impl") // TODO[#51]: Get rid of this after migration to 2025.1
     }
 
     runIde {
@@ -167,6 +167,10 @@ tasks {
     }
 
     test {
+        classpath -= classpath.filter {
+            (it.name.startsWith("localization-") && it.name.endsWith(".jar")) // TODO: https://youtrack.jetbrains.com/issue/IJPL-178084/External-plugin-tests-break-due-to-localization-issues
+        }
+
         useTestNG()
         testLogging {
             showStandardStreams = true

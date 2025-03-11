@@ -1,6 +1,7 @@
 /.idea/
 /.gradle/
 /.intellijPlatform/
+/.kotlin/
 
 bin/
 obj/

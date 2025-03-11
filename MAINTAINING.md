@@ -10,7 +10,7 @@ Maintainer Guide
 Publish a New Version
 ---------------------
 1. Update the copyright statement in the `README.md` file, if required.
-2. Update the copyright statement in the `Rider.Plugin.Template.csproj` file, if required.
+2. Update the `<Copyright>` statement in the `Rider.Plugin.Template.csproj` file, if required.
 3. Choose a new version according to the versioning policy.
 4. Prepare a corresponding entry in the `CHANGELOG.md` file (usually by renaming the "Unreleased" section).
 5. Set `<Version>` in the `Rider.Plugin.Template.csproj` file.

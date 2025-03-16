@@ -5,22 +5,20 @@ import com.jetbrains.rd.platform.diagnostics.RdLogTraceScenarios
 import com.jetbrains.rider.plugins.plugintemplate.ProtocolCaller
 import com.jetbrains.rider.protocol.protocol
 import com.jetbrains.rider.test.OpenSolutionParams
+import com.jetbrains.rider.test.annotations.Solution
 import com.jetbrains.rider.test.annotations.TestEnvironment
 import com.jetbrains.rider.test.asserts.shouldBe
-import com.jetbrains.rider.test.base.BaseTestWithSolution
+import com.jetbrains.rider.test.base.PerClassSolutionTestBase
 import com.jetbrains.rider.test.env.enums.BuildTool
 import com.jetbrains.rider.test.env.enums.SdkVersion
-import com.jetbrains.rider.test.facades.RiderSolutionApiFacade
+import com.jetbrains.rider.test.facades.solution.RiderSolutionApiFacade
 import com.jetbrains.rider.test.facades.solution.SolutionApiFacade
 import com.jetbrains.rider.test.scriptingApi.runBlockingWithProtocolPumping
 import org.testng.annotations.Test
-import java.time.Duration
 
 @TestEnvironment(sdkVersion = SdkVersion.AUTODETECT, buildTool = BuildTool.AUTODETECT)
-class MyTestCase : BaseTestWithSolution() {
-    override val testSolution: String = "MyTestSolution"
-    override val restoreNuGetPackages = true
-    override val backendLoadedTimeout: Duration = Duration.ofMinutes(2L)
+@Solution("MyTestSolution")
+class MyTestCase : PerClassSolutionTestBase() {
     override val traceScenarios = setOf(RdLogTraceScenarios.Commands)
 
     override val solutionApiFacade: SolutionApiFacade = object : RiderSolutionApiFacade() {

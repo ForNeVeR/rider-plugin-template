@@ -14,6 +14,11 @@ Installing Template
 $ dotnet new install FVNever.Rider.Plugin.Template
 ```
 
+If you need a preview version, then specify a version explicitly, e.g.
+```console
+$ dotnet new install FVNever.Rider.Plugin.Template::251.0.0-eap08
+```
+
 ### From Sources
 1. Fork or clone the repository.
 2. Create a local NuGet package:

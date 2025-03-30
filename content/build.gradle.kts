@@ -163,10 +163,6 @@ tasks {
     }
 
     test {
-        classpath -= classpath.filter {
-            (it.name.startsWith("localization-") && it.name.endsWith(".jar")) // TODO[#63]: https://youtrack.jetbrains.com/issue/IJPL-178084/External-plugin-tests-break-due-to-localization-issues
-        }
-
         useTestNG()
         testLogging {
             showStandardStreams = true

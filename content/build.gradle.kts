@@ -30,7 +30,6 @@ repositories {
 }
 
 val pluginVersion: String by project
-val untilBuildVersion: String by project
 val buildConfiguration: String by project
 val dotNetPluginId: String by project
 
@@ -121,7 +120,6 @@ tasks {
     }
 
     patchPluginXml {
-        untilBuild.set(untilBuildVersion)
         val latestChangelog = try {
             changelog.getUnreleased()
         } catch (_: MissingVersionException) {

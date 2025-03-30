@@ -15,12 +15,6 @@
         "kind": "rider",
         "versionFlavor": "eap"
     }, {
-        "file": "content/gradle.properties",
-        "field": "untilBuildVersion",
-        "kind": "rider",
-        "versionFlavor": "release",
-        "augmentation": "nextMajor"
-    }, {
         "file": "content/gradle/libs.versions.toml",
         "field": "riderSdkPreview",
         "kind": "rider",

@@ -5,8 +5,8 @@ kotlin = "2.1.10"
 rdGen = "2025.1.1"
 # https://www.jetbrains.com/intellij-repository/snapshots/com/jetbrains/intellij/rider/riderRD/maven-metadata.xml
 # https://www.jetbrains.com/intellij-repository/releases/com/jetbrains/intellij/rider/riderRD/maven-metadata.xml
-riderSdk = "2025.1-RC1-SNAPSHOT"
-riderSdkPreview = "2025.1-RC1-SNAPSHOT"
+riderSdk = "2025.1"
+riderSdkPreview = "2025.1"
 
 [libraries]
 kotlinStdLib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }

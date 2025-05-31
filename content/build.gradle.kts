@@ -191,7 +191,7 @@ artifacts {
     add(riderModel.name, provider {
         intellijPlatform.platformPath.resolve("lib/rd/rider-model.jar").also {
             check(it.isRegularFile()) {
-                "rider-model.jar is not found at $riderModel"
+                "rider-model.jar is not found at \"$it\"."
             }
         }
     }) {

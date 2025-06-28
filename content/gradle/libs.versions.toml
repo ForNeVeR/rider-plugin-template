@@ -5,7 +5,7 @@ kotlin = "2.1.10"
 rdGen = "2025.1.1"
 # https://www.jetbrains.com/intellij-repository/snapshots/com/jetbrains/intellij/rider/riderRD/maven-metadata.xml
 # https://www.jetbrains.com/intellij-repository/releases/com/jetbrains/intellij/rider/riderRD/maven-metadata.xml
-riderSdk = "2025.1"
+riderSdk = "2025.2-EAP7-SNAPSHOT"
 riderSdkPreview = "2025.2-EAP7-SNAPSHOT"
 
 [libraries]

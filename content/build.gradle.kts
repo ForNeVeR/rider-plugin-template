@@ -2,6 +2,7 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.changelog.exceptions.MissingVersionException
 import org.jetbrains.intellij.platform.gradle.Constants
 import org.jetbrains.intellij.platform.gradle.TestFrameworkType
+import org.jetbrains.intellij.platform.gradle.tasks.InstrumentCodeTask
 import org.jetbrains.intellij.platform.gradle.tasks.PrepareSandboxTask
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import kotlin.io.path.absolute
@@ -37,7 +38,7 @@ val dotNetSrcDir = File(projectDir, "src/dotnet")
 
 version = pluginVersion
 
-val riderSdkPath by lazy {
+val dotNetRiderSdkPath by lazy {
     val path = intellijPlatform.platformPath.resolve("lib/DotNetSdkForRdPlugins").absolute()
     if (!path.isDirectory()) error("$path does not exist or not a directory")
 
@@ -45,9 +46,20 @@ val riderSdkPath by lazy {
     return@lazy path
 }
 
+// NOTE: To use a local Rider SDK (needed for cases when the SDK you are looking for is not available in the normal
+// online sources — e.g., a test build for a specific purpose), unpack it into the "build/rider" directory.
+val localRiderSdk = file("build/rider")
+val useLocalRiderSdk = localRiderSdk.exists()
 dependencies {
     intellijPlatform {
-        rider(libs.versions.riderSdk, useInstaller = false)
+        if (useLocalRiderSdk) {
+            logger.lifecycle("Using Rider SDK from local path \"${localRiderSdk.absolutePath}\".")
+            local(localRiderSdk)
+        } else {
+            logger.lifecycle("Using Rider SDK ${libs.versions.riderSdk.get()} from online repository.")
+            rider(libs.versions.riderSdk, useInstaller = false)
+        }
+
         jetbrainsRuntime()
         testFramework(TestFrameworkType.Bundled)
     }
@@ -69,12 +81,18 @@ sourceSets {
 }
 
 tasks {
+    if (useLocalRiderSdk) {
+        withType<InstrumentCodeTask> { // doesn't work on a local SDK anyway
+            enabled = false
+        }
+    }
+
     val generateDotNetSdkProperties by registering {
         val dotNetSdkGeneratedPropsFile = File(projectDir, "build/DotNetSdkPath.Generated.props")
         doLast {
             dotNetSdkGeneratedPropsFile.writeTextIfChanged("""<Project>
   <PropertyGroup>
-    <DotNetSdkPath>$riderSdkPath</DotNetSdkPath>
+    <DotNetSdkPath>$dotNetRiderSdkPath</DotNetSdkPath>
   </PropertyGroup>
 </Project>
 """)
@@ -90,7 +108,7 @@ tasks {
             <!-- Run `gradlew :prepare` to regenerate -->
             <configuration>
                 <packageSources>
-                    <add key="rider-sdk" value="$riderSdkPath" />
+                    <add key="rider-sdk" value="$dotNetRiderSdkPath" />
                 </packageSources>
             </configuration>
             """.trimIndent())

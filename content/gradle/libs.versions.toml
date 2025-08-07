@@ -1,12 +1,12 @@
 [versions]
 # https://plugins.jetbrains.com/docs/intellij/using-kotlin.html#kotlin-standard-library
-kotlin = "2.1.10"
+kotlin = "2.1.20"
 # https://search.maven.org/artifact/com.jetbrains.rd/rd-gen
-rdGen = "2025.1.1"
+rdGen = "2025.2.2"
 # https://www.jetbrains.com/intellij-repository/snapshots/com/jetbrains/intellij/rider/riderRD/maven-metadata.xml
 # https://www.jetbrains.com/intellij-repository/releases/com/jetbrains/intellij/rider/riderRD/maven-metadata.xml
-riderSdk = "2025.2-EAP5-SNAPSHOT"
-riderSdkPreview = "2025.2-EAP5-SNAPSHOT"
+riderSdk = "2025.2-RC2-SNAPSHOT"
+riderSdkPreview = "2025.2-RC2-SNAPSHOT"
 
 [libraries]
 kotlinStdLib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }

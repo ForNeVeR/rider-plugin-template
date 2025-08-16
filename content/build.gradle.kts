@@ -47,11 +47,14 @@ val riderSdkPath by lazy {
 
 dependencies {
     intellijPlatform {
-        rider(libs.versions.riderSdk, useInstaller = false)
+        rider(libs.versions.riderSdk) {
+            useInstaller = false
+        }
         jetbrainsRuntime()
         testFramework(TestFrameworkType.Bundled)
     }
     testImplementation(libs.openTest4J)
+    testImplementation(libs.junit)
 }
 
 kotlin {

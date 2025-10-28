@@ -3,23 +3,17 @@
         "file": "content/gradle/libs.versions.toml",
         "field": "rdGen",
         "kind": "rd-gen",
-        "versionFlavor": "release",
-        "versionConstraint": "latestWave",
-        "order": "oldest"
+        "versionFlavor": "eap"
     }, {
         "file": "content/gradle/libs.versions.toml",
         "field": "kotlin",
         "kind": "kotlin",
-        "versionFlavor": "release",
-        "versionConstraint": "latestWave",
-        "order": "oldest"
+        "versionFlavor": "eap"
     }, {
         "file": "content/gradle/libs.versions.toml",
         "field": "riderSdk",
         "kind": "rider",
-        "versionFlavor": "release",
-        "versionConstraint": "latestWave",
-        "order": "oldest"
+        "versionFlavor": "eap"
     }, {
         "file": "content/gradle/libs.versions.toml",
         "field": "riderSdkPreview",

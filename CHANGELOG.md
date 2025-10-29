@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][keep-a-changelog]. See the details on version numbers in [the project's README file][docs.readme].
 
+## [253.0.0-eap07] - 2025-10-30
+### Changed
+- Update to Rider 2025.3 EAP 7.
+- Update the dependencies' versions.
+
 ## [252.0.0] - 2025-08-16
 ### Changed
 - Update to Rider 2025.2.
@@ -42,4 +47,5 @@ The template will generate a plugin compatible with Rider 2024.2.
 [251.0.0-eap08]: https://github.com/ForNeVeR/rider-plugin-template/compare/v243.0.0...v251.0.0-eap08
 [251.0.0]: https://github.com/ForNeVeR/rider-plugin-template/compare/v251.0.0-eap08...v251.0.0
 [252.0.0]: https://github.com/ForNeVeR/rider-plugin-template/compare/v251.0.0...v252.0.0
-[Unreleased]: https://github.com/ForNeVeR/rider-plugin-template/compare/v252.0.0...HEAD
+[253.0.0-eap07]: https://github.com/ForNeVeR/rider-plugin-template/compare/v252.0.0...v253.0.0-eap07
+[Unreleased]: https://github.com/ForNeVeR/rider-plugin-template/compare/v253.0.0-eap07...HEAD

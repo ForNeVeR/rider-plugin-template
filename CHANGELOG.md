@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog][keep-a-changelog]. See the details on 
 - Update intellij-platform-gradle-plugin to v2.10.5.
 - Update the changelog plugin to v2.5.0.
 - Update JDK to v21.
+- Update the Gradle memory requirements to 1 GiB.
 
 ### Added
 - An example of icon registration. Thanks to @thisisvolatile!

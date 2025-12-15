@@ -11,7 +11,7 @@
     </PropertyGroup>
 
     <PropertyGroup Label="Package">
-        <Version>253.0.0-eap07</Version>
+        <Version>253.0.0</Version>
         <PackageId>FVNever.Rider.Plugin.Template</PackageId>
         <Title>JetBrains Rider Plugin Template</Title>
         <Authors>rider-plugin-template contributors</Authors>

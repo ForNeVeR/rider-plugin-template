@@ -6,7 +6,7 @@ rdGen = "2025.3.1"
 # https://www.jetbrains.com/intellij-repository/snapshots/com/jetbrains/intellij/rider/riderRD/maven-metadata.xml
 # https://www.jetbrains.com/intellij-repository/releases/com/jetbrains/intellij/rider/riderRD/maven-metadata.xml
 riderSdk = "2025.3"
-riderSdkPreview = "2025.3"
+riderSdkPreview = "2026.1-EAP6-SNAPSHOT"
 
 [libraries]
 junit = "junit:junit:4.13.2"

@@ -26,7 +26,7 @@ jobs:
         uses: ForNeVeR/intellij-updater@v1
         name: "Update the dependency versions"
 
-      - uses: actions/create-github-app-token@v2
+      - uses: actions/create-github-app-token@v3
         id: generate-token
         with:
           app-id: ${{ secrets.IJ_UPDATER_APP_ID }}

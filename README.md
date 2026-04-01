@@ -60,7 +60,7 @@ License
 -------
 Apache 2 License, see [the `LICENSE` file][docs.license].
 
-Copyright 2024-2025 rider-plugin-template contributors.
+Copyright 2024-2026 rider-plugin-template contributors.
 
 [badge.jetbrains-team]: https://jb.gg/badges/team.svg
 [docs.changelog]: CHANGELOG.md

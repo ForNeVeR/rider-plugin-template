@@ -52,10 +52,12 @@ dependencies {
         }
         jetbrainsRuntime()
         testFramework(TestFrameworkType.Bundled)
-        testBundledPlugin("tanvd.grazi") // TODO[#109]: workaround for IllegalStateException: Cannot find service com.intellij.spellchecker.engine.SpellCheckerEngine
     }
-    testImplementation(libs.openTest4J)
+
     testImplementation(libs.junit)
+    testImplementation(libs.kotlin.test)
+    testImplementation(libs.openTest4J)
+    testImplementation(libs.testng)
 }
 
 kotlin {

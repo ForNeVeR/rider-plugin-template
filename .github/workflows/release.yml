@@ -40,7 +40,7 @@ jobs:
           ./bin/Release/FVNever.Rider.Plugin.Template.${{ steps.version.outputs.version }}.nupkg
     - if: startsWith(github.ref, 'refs/tags/v')
       name: Create a release
-      uses: softprops/action-gh-release@v2
+      uses: softprops/action-gh-release@v3
       with:
         body_path: ./release-notes.md
         files: |-

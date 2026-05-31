@@ -50,8 +50,14 @@ dependencies {
         rider(libs.versions.riderSdk) {
             useInstaller = false
         }
+
         jetbrainsRuntime()
+
+        bundledModule("intellij.rider.rdclient.dotnet")
+
         testFramework(TestFrameworkType.Bundled)
+
+        testBundledPlugin("com.intellij.moduleSet.structureView")
     }
 
     testImplementation(libs.junit)

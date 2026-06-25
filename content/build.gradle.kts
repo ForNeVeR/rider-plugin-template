@@ -57,7 +57,9 @@ dependencies {
 
         testFramework(TestFrameworkType.Bundled)
 
-        testBundledPlugin("com.intellij.moduleSet.structureView")
+        testBundledPlugin("intellij.bookmarks.plugin")
+        testBundledPlugin("intellij.libraries.misc.plugin")
+        testBundledPlugin("intellij.structureView.plugin")
     }
 
     testImplementation(libs.junit)

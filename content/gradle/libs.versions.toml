@@ -5,8 +5,8 @@ kotlin = "2.3.21-RC2"
 rdGen = "2026.2.5"
 # https://www.jetbrains.com/intellij-repository/snapshots/com/jetbrains/intellij/rider/riderRD/maven-metadata.xml
 # https://www.jetbrains.com/intellij-repository/releases/com/jetbrains/intellij/rider/riderRD/maven-metadata.xml
-riderSdk = "2026.2-EAP6-SNAPSHOT"
-riderSdkPreview = "2026.2-EAP6-SNAPSHOT"
+riderSdk = "2026.2-EAP8-SNAPSHOT"
+riderSdkPreview = "2026.2-EAP8-SNAPSHOT"
 
 [libraries]
 junit = "junit:junit:4.13.2"

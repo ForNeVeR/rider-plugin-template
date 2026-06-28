@@ -57,8 +57,10 @@ dependencies {
 
         testFramework(TestFrameworkType.Bundled)
 
+        testBundledPlugin("com.intellij.modules.jcef")
         testBundledPlugin("intellij.bookmarks.plugin")
         testBundledPlugin("intellij.libraries.misc.plugin")
+        testBundledPlugin("intellij.ssh.plugin")
         testBundledPlugin("intellij.structureView.plugin")
     }
 

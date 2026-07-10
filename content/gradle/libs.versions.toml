@@ -18,6 +18,6 @@ testng = "org.testng:testng:7.12.0"
 
 [plugins]
 changelog = "org.jetbrains.changelog:2.5.0"
-gradleIntelliJPlatform = "org.jetbrains.intellij.platform:2.17.0"
+gradleIntelliJPlatform = "org.jetbrains.intellij.platform:2.18.1"
 gradleJvmWrapper = "me.filippov.gradle.jvm.wrapper:0.16.0"
 kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

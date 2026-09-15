@@ -26,7 +26,7 @@ jobs:
     - name: Set up .NET SDK
       uses: actions/setup-dotnet@v6
       with:
-        dotnet-version: '8.0.x'
+        dotnet-version: '10.0.401'
     - run: dotnet pack --configuration Release -p:Version=${{ steps.version.outputs.version }}
     - name: Read changelog
       uses: ForNeVeR/ChangelogAutomation.action@v2

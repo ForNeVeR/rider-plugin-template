@@ -9,17 +9,19 @@ import com.jetbrains.rider.test.OpenSolutionParams
 import com.jetbrains.rider.test.annotations.Solution
 import com.jetbrains.rider.test.annotations.TestSettings
 import com.jetbrains.rider.test.asserts.shouldBe
-import com.jetbrains.rider.test.base.PerClassSolutionTestBase
 import com.jetbrains.rider.test.enums.BuildTool
 import com.jetbrains.rider.test.enums.sdk.SdkVersion
 import com.jetbrains.rider.test.facades.solution.RiderSolutionApiFacade
 import com.jetbrains.rider.test.facades.solution.SolutionApiFacade
+import com.jetbrains.rider.test.junit5.base.PerClassSolutionTestBase
 import com.jetbrains.rider.test.scriptingApi.runBlockingWithProtocolPumping
-import org.testng.annotations.Test
+import org.junit.jupiter.api.Tag
+import org.junit.jupiter.api.Test
 import java.awt.image.BufferedImage
 
 @TestSettings(sdkVersion = SdkVersion.AUTODETECT, buildTool = BuildTool.AUTODETECT)
 @Solution("MyTestSolution")
+@Tag("episode/Plugins/PluginTemplate")
 class MyTestCase : PerClassSolutionTestBase() {
     override val traceScenarios = setOf(RdLogTraceScenarios.Commands)
 

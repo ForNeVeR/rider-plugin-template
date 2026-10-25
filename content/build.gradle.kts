@@ -59,15 +59,16 @@ dependencies {
 
         testBundledPlugin("com.intellij.modules.jcef")
         testBundledPlugin("intellij.bookmarks.plugin")
-        testBundledPlugin("intellij.libraries.misc.plugin")
         testBundledPlugin("intellij.ssh.plugin")
         testBundledPlugin("intellij.structureView.plugin")
     }
 
     testImplementation(libs.junit)
+    testImplementation(libs.junit.jupiter)
+    testRuntimeOnly(libs.junit.engine)
+    testRuntimeOnly(libs.junit.launcher)
     testImplementation(libs.kotlin.test)
     testImplementation(libs.openTest4J)
-    testImplementation(libs.testng)
 }
 
 kotlin {
@@ -176,8 +177,10 @@ tasks {
         jvmArgs("-Xmx1500m")
     }
 
-    test {
-        useTestNG()
+    withType<Test> {
+        useJUnitPlatform()
+        // Ignore IJ Platform JUnit5 framework set up and tear down
+        systemProperty("intellij.build.test.ignoreFirstAndLastTests", "true")
         testLogging {
             showStandardStreams = true
             exceptionFormat = TestExceptionFormat.FULL

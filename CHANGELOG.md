@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][keep-a-changelog]. See the details on version numbers in [the project's README file][docs.readme].
 
+## [263.0.0] - 2026-11-21
+### Changed
+- Update to Rider v2026.3.0.1.
+- Update tests to JUnit.
+- Update Gradle to v9.9.2.
+
 ## [262.0.0] - 2026-08-02
 ### Changed
 - Update to Rider v2026.2.0.1.
@@ -81,4 +87,5 @@ The template will generate a plugin compatible with Rider 2024.2.
 [261.0.0]: https://github.com/ForNeVeR/rider-plugin-template/compare/v253.0.0...v261.0.0
 [262.0.0-eap04]: https://github.com/ForNeVeR/rider-plugin-template/compare/v261.0.0...v262.0.0-eap04
 [262.0.0]: https://github.com/ForNeVeR/rider-plugin-template/compare/v262.0.0-eap04...v262.0.0
-[Unreleased]: https://github.com/ForNeVeR/rider-plugin-template/compare/v262.0.0...HEAD
+[263.0.0]: https://github.com/ForNeVeR/rider-plugin-template/compare/v262.0.0...v263.0.0
+[Unreleased]: https://github.com/ForNeVeR/rider-plugin-template/compare/v263.0.0...HEAD
